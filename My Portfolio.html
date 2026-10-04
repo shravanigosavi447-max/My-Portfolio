@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Portfolio</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css">
+
+    <style>
+
+        /* =========================
+           BASIC SETTINGS
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: #fffaf3;
+            color: #333;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            height: 80px;
+            background-color: #00b8b8;
+
+            position: sticky;
+            top: 0;
+
+            z-index: 10;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        nav ul {
+            list-style-type: none;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            gap: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+
+            font-size: 19px;
+            font-weight: bold;
+
+            position: relative;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #333;
+        }
+
+        nav a::after {
+            content: "";
+
+            width: 0;
+            height: 2px;
+
+            background-color: white;
+
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+
+        /* =========================
+           HOME SECTION
+        ========================= */
+
+        header {
+            min-height: 500px;
+
+            padding: 70px 8%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 40px;
+
+            background: linear-gradient(
+                135deg,
+                #fffaf3,
+                #e8ffff
+            );
+        }
+
+        .homediscrip {
+            width: 60%;
+        }
+
+        .homediscrip h1 {
+            font-size: 55px;
+
+            color: #333;
+
+            margin-bottom: 10px;
+
+            text-shadow: 3px 3px 0px #00cccc;
+        }
+
+        .homediscrip h2 {
+            color: #008f8f;
+
+            font-size: 27px;
+
+            margin-bottom: 20px;
+        }
+
+        .homediscrip p {
+            font-size: 18px;
+
+            text-align: justify;
+
+            color: #666;
+
+            line-height: 1.7;
+
+            margin-bottom: 25px;
+        }
+
+        .imgcontainer {
+            width: 40%;
+
+            text-align: center;
+        }
+
+        .ImgUser {
+            width: 250px;
+            height: 250px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 6px solid #00b8b8;
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+            transition: 0.4s;
+        }
+
+        .ImgUser:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+
+        /* =========================
+           MORE INFORMATION BUTTON
+        ========================= */
+
+        .btnMoreInfo {
+            padding: 12px 28px;
+
+            background-color: #00b8b8;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 25px;
+
+            font-size: 18px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .btnMoreInfo:hover {
+            background-color: #008f8f;
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* =========================
+           SECTION HEADINGS
+        ========================= */
+
+        .heading {
+            text-align: center;
+
+            font-size: 42px;
+
+            padding-bottom: 10px;
+
+            margin-bottom: 35px;
+
+            color: #333;
+        }
+
+        .heading::after {
+            content: "";
+
+            display: block;
+
+            width: 70px;
+            height: 4px;
+
+            background-color: #00b8b8;
+
+            margin: 10px auto;
+
+            border-radius: 10px;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        #Projects {
+            padding: 60px 8%;
+
+            background-color: white;
+        }
+
+        .projectDetails {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 30px;
+
+            flex-wrap: wrap;
+        }
+
+        .Card {
+            width: 280px;
+
+            background-color: white;
+
+            border: 1px solid #ddd;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+        .Card:hover {
+            transform: translateY(-8px);
+
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+        }
+
+        .Card img {
+            width: 100%;
+
+            height: 160px;
+
+            object-fit: cover;
+        }
+
+        .Card h3 {
+            text-align: center;
+
+            margin: 15px 10px 5px;
+
+            color: #333;
+        }
+
+        .Card p {
+            font-size: 15px;
+
+            text-align: center;
+
+            color: #666;
+
+            padding: 10px 18px;
+
+            line-height: 1.5;
+        }
+
+        .icons {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 25px;
+
+            padding: 15px;
+        }
+
+        .icons a {
+            color: #333;
+
+            font-size: 22px;
+
+            transition: 0.3s;
+        }
+
+        .icons a:hover {
+            color: #00a5a5;
+
+            transform: scale(1.2);
+        }
+
+
+        /* =========================
+           TECHNOLOGIES
+        ========================= */
+
+        #Technologies {
+            padding: 60px 8%;
+
+            background-color: #fffaf3;
+        }
+
+        .technologies {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 40px;
+
+            flex-wrap: wrap;
+        }
+
+        .techBox {
+            width: 300px;
+
+            background-color: white;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+        .techBox:hover {
+            transform: translateY(-5px);
+        }
+
+        .techHead {
+            color: #008f8f;
+
+            font-size: 24px;
+
+            margin-bottom: 10px;
+        }
+
+        .techBox ul {
+            margin-left: 20px;
+
+            margin-bottom: 25px;
+        }
+
+        .techBox li {
+            margin: 7px 0;
+        }
+
+
+        /* =========================
+           ABOUT ME
+        ========================= */
+
+        #AboutMe {
+            padding: 60px 8%;
+
+            background-color: white;
+        }
+
+        .aboutText {
+            max-width: 800px;
+
+            margin: 0 auto 30px;
+
+            text-align: center;
+
+            color: #666;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+        }
+
+        .personal-info {
+            max-width: 800px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+        }
+
+        .personal-info div {
+            padding: 15px;
+
+            background-color: #f5ffff;
+
+            border-left: 4px solid #00b8b8;
+
+            border-radius: 5px;
+        }
+
+        .personal-info strong {
+            margin-right: 8px;
+        }
+
+        .personal-info span {
+            color: #666;
+        }
+
+
+        /* =========================
+           ABOUT BUTTONS
+        ========================= */
+
+        .about-buttons {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            margin-top: 30px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 25px;
+
+            background-color: #00b8b8;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 25px;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #008f8f;
+
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+
+            color: #00a5a5;
+
+            border: 2px solid #00a5a5;
+        }
+
+        .btn-outline:hover {
+            background-color: #00a5a5;
+
+            color: white;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        #ContactMe {
+            padding: 60px 8%;
+
+            background-color: #fffaf3;
+        }
+
+        .contactForm {
+            max-width: 650px;
+
+            margin: auto;
+
+            padding: 30px;
+
+            background-color: white;
+
+            border-radius: 12px;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .formControl {
+            margin-bottom: 20px;
+        }
+
+        .formControl label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-weight: bold;
+        }
+
+        .inputClass,
+        .messageBox {
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 7px;
+
+            outline: none;
+
+            font-size: 16px;
+
+            transition: 0.3s;
+        }
+
+        .messageBox {
+            height: 120px;
+
+            resize: vertical;
+        }
+
+        .inputClass:focus,
+        .messageBox:focus {
+            border-color: #00b8b8;
+
+            box-shadow: 0 0 5px rgba(0, 184, 184, 0.3);
+        }
+
+        #submitBTN {
+            padding: 12px 30px;
+
+            background-color: #00b8b8;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 25px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        #submitBTN:hover {
+            background-color: #008f8f;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background-color: #222;
+
+            color: white;
+
+            padding: 30px;
+
+            text-align: center;
+        }
+
+        .footerIcons {
+            margin-bottom: 15px;
+        }
+
+        .footerIcons a {
+            color: white;
+
+            font-size: 23px;
+
+            margin: 0 10px;
+
+            transition: 0.3s;
+        }
+
+        .footerIcons a:hover {
+            color: #00cccc;
+        }
+
+        footer p {
+            font-size: 14px;
+
+            text-align: center;
+        }
+
+
+        /* =========================
+           GO TO TOP
+        ========================= */
+
+        .goToTop {
+            width: 50px;
+            height: 50px;
+
+            background-color: #00b8b8;
+
+            border-radius: 50%;
+
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+            transition: 0.3s;
+        }
+
+        .goToTop:hover {
+            background-color: #008f8f;
+
+            transform: translateY(-5px);
+        }
+
+        .goToTop a {
+            color: white;
+
+            font-size: 20px;
+        }
+
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            nav {
+                height: auto;
+
+                padding: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                font-size: 15px;
+            }
+
+            header {
+                flex-direction: column-reverse;
+
+                text-align: center;
+
+                padding: 50px 5%;
+            }
+
+            .homediscrip {
+                width: 100%;
+            }
+
+            .imgcontainer {
+                width: 100%;
+            }
+
+            .homediscrip h1 {
+                font-size: 40px;
+            }
+
+            .homediscrip p {
+                text-align: center;
+
+                font-size: 16px;
+            }
+
+            .ImgUser {
+                width: 200px;
+                height: 200px;
+            }
+
+            .heading {
+                font-size: 34px;
+            }
+
+            .personal-info {
+                grid-template-columns: 1fr;
+            }
+
+            .projectDetails {
+                padding: 20px 0;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#Projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#Technologies">Technologies</a>
+            </li>
+
+            <li>
+                <a href="#AboutMe">About Me</a>
+            </li>
+
+            <li>
+                <a href="#ContactMe">Contact Me</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         HOME
+    ========================= -->
+
+    <header id="home">
+
+        <div class="homediscrip">
+
+            <h1>Shravani Gosavi</h1>
+
+            <h2>Computer Engineering Student</h2>
+
+            <p>
+                Hello! I am a Computer Engineering student interested in
+                software development and web technologies. I enjoy learning
+                new technologies, building projects and improving my
+                problem-solving skills.
+            </p>
+
+            <button class="btnMoreInfo"
+                onclick="location.href='#AboutMe'">
+
+                More Information
+
+            </button>
+
+        </div>
+
+
+        <div class="imgcontainer">
+
+            <img src="./shra photo.png.jpg"
+                alt="My Profile Picture"
+                class="ImgUser">
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================= -->
+
+    <section id="Projects">
+
+        <h2 class="heading">Projects</h2>
+
+
+        <div class="projectDetails">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="Card">
+
+                <img src="./mern image.png"
+                    alt="Web Development Project">
+
+                <h3>Web Development Project</h3>
+
+                <p>
+                    A web development project created using
+                    HTML and CSS to practice website design
+                    and layout.
+                </p>
+
+                <div class="icons">
+
+                    <a href="#"
+                        title="GitHub">
+
+                        <i class="fa-brands fa-github"></i>
+
+                    </a>
+
+                    <a href="#"
+                        title="Live Project">
+
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="Card">
+
+                <img src="./mern image.png"
+                    alt="CSS Project">
+
+                <h3>CSS Practice Project</h3>
+
+                <p>
+                    A collection of CSS practice including
+                    navigation bars, cards, flexbox,
+                    positioning and animations.
+                </p>
+
+                <div class="icons">
+
+                    <a href="#"
+                        title="GitHub">
+
+                        <i class="fa-brands fa-github"></i>
+
+                    </a>
+
+                    <a href="#"
+                        title="Live Project">
+
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="Card">
+
+                <img src="./mern image.png"
+                    alt="Student Project">
+
+                <h3>Student Project</h3>
+
+                <p>
+                    An academic project created as part of
+                    my Computer Engineering learning and
+                    practical development experience.
+                </p>
+
+                <div class="icons">
+
+                    <a href="#"
+                        title="GitHub">
+
+                        <i class="fa-brands fa-github"></i>
+
+                    </a>
+
+                    <a href="#"
+                        title="Live Project">
+
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TECHNOLOGIES
+    ========================= -->
+
+    <section id="Technologies">
+
+        <h2 class="heading">Technologies</h2>
+
+
+        <div class="technologies">
+
+
+            <div class="techBox">
+
+                <h3 class="techHead">FRONTEND</h3>
+
+                <ul>
+
+                    <li>HTML</li>
+
+                    <li>CSS</li>
+
+                    <li>JavaScript</li>
+
+                    <li>React.js</li>
+
+                </ul>
+
+
+                <h3 class="techHead">BACKEND</h3>
+
+                <ul>
+
+                    <li>Node.js</li>
+
+                    <li>Express.js</li>
+
+                    <li>Spring Boot</li>
+
+                    <li>Hibernate</li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="techBox">
+
+                <h3 class="techHead">DATABASES</h3>
+
+                <ul>
+
+                    <li>MySQL</li>
+
+                    <li>MongoDB</li>
+
+                </ul>
+
+
+                <h3 class="techHead">PROGRAMMING LANGUAGES</h3>
+
+                <ul>
+
+                    <li>Python</li>
+
+                    <li>Java</li>
+
+                    <li>C</li>
+
+                    <li>C++</li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT ME
+    ========================= -->
+
+    <section id="AboutMe">
+
+        <h2 class="heading">About Me</h2>
+
+
+        <p class="aboutText">
+
+            I am a Computer Engineering student currently developing
+            my skills in programming, web development and software
+            development. I enjoy learning through practical projects
+            and continuously improving my technical skills.
+
+        </p>
+
+
+        <div class="personal-info">
+
+
+            <div>
+
+                <strong>Name:</strong>
+
+                <span>SHRAVANI GOSAVI</span>
+
+            </div>
+
+
+            <div>
+
+                <strong>Email:</strong>
+
+                <span>shravanigosavi447@gmail.com</span>
+
+            </div>
+
+
+            <div>
+
+                <strong>Education:</strong>
+
+                <span>Computer Engineering</span>
+
+            </div>
+
+
+            <div>
+
+                <strong>Location:</strong>
+
+                <span>Pune, India</span>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="about-buttons">
+
+            <a href="#ContactMe"
+                class="btn">
+
+                Contact Me
+
+            </a>
+
+
+            <a href="resume.pdf"
+                class="btn btn-outline"
+                target="_blank">
+
+                Download Resume
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section id="ContactMe">
+
+        <h2 class="heading">Contact Me</h2>
+
+
+        <div class="contactForm">
+
+            <form>
+
+
+                <div class="formControl">
+
+                    <label for="name">
+                        Name:
+                    </label>
+
+                    <input type="text"
+                        id="name"
+                        class="inputClass"
+                        placeholder="Enter your name">
+
+                </div>
+
+
+                <div class="formControl">
+
+                    <label for="email">
+                        Email:
+                    </label>
+
+                    <input type="email"
+                        id="email"
+                        class="inputClass"
+                        placeholder="Enter your email">
+
+                </div>
+
+
+                <div class="formControl">
+
+                    <label for="message">
+                        Message:
+                    </label>
+
+                    <textarea id="message"
+                        class="messageBox"
+                        placeholder="Write your message"></textarea>
+
+                </div>
+
+
+                <div class="formControl">
+
+                    <button id="submitBTN"
+                        type="submit">
+
+                        Send Message
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="footerIcons">
+
+            <a href="#"
+                title="GitHub">
+
+                <i class="fa-brands fa-github"></i>
+
+            </a>
+
+
+            <a href="#"
+                title="LinkedIn">
+
+                <i class="fa-brands fa-linkedin"></i>
+
+            </a>
+
+
+            <a href="mailto:your.email@gmail.com"
+                title="Email">
+
+                <i class="fa-solid fa-envelope"></i>
+
+            </a>
+
+        </div>
+
+
+        <p>
+            © 2026 YOUR NAME | Computer Engineering Student
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         GO TO TOP BUTTON
+    ========================= -->
+
+    <div class="goToTop">
+
+        <a href="#home">
+
+            <i class="fa-solid fa-up-long"></i>
+
+        </a>
+
+    </div>
+
+
+</body>
+
+</html>
